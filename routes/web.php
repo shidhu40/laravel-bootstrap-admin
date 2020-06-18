@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/admin','AdminController@dashboard');
+Route::get('/','AdminController@dashboard');
