@@ -1,8 +1,8 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Item;
-class AdminController extends Controller
+class DashboardController extends Controller
 {
    /**
     * Create a new controller instance.
@@ -17,7 +17,7 @@ class AdminController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function dashboard()
+    public function index()
     {
        return view('admin');
     }

@@ -11,4 +11,23 @@
 |
 */
 
-Route::get('/','AdminController@dashboard');
+Route::get('/', function () {
+    return view('welcome');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+//create for redirect to admin panel using middleware (we have changes in AdminMiddleware,kernel,LoginController files //here auth and admin indicate to folder)
+
+Route::group(['prefix'  =>  'admin'], function () {
+	Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
+    Route::post('login', 'Admin\LoginController@login')->name('admin.login.post');
+    Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
+	
+	Route::group(['middleware' => ['auth:admin']], function () {
+
+        Route::get('/', function () {
+            return view('admin.dashboard.index');
+        })->name('admin.dashboard');
+    });
+});
