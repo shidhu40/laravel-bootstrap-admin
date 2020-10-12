@@ -19,6 +19,7 @@ class AdminController extends Controller
     */
     public function dashboard()
     {
-       return view('admin');
+       die('hihiih');
+	   return view('admin');
     }
 }
