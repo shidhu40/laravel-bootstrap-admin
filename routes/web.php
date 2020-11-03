@@ -11,23 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-//create for redirect to admin panel using middleware (we have changes in AdminMiddleware,kernel,LoginController files //here auth and admin indicate to folder)
+Route::get('/', 'HomeController@index')->name('home');
+// Authentication
+Route::get('admin/login', array('as' => 'admin.login', 'uses' => 'Admin\LoginController@showLoginForm'));
+Route::post('admin/login', array('as' => 'admin.login.post', 'uses' => 'Admin\LoginController@login'));
+Route::get('admin/logout', array('as' => 'admin.logout', 'uses' => 'Admin\LoginController@logout'));
 
-Route::group(['prefix'  =>  'admin'], function () {
-	Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
-    Route::post('login', 'Admin\LoginController@login')->name('admin.login.post');
-    Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
+Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
+    
+	// Registration Routes...
+    Route::get('admin/register', 'AdminAuth\AuthController@showRegistrationForm');
+    Route::post('admin/register', 'AdminAuth\AuthController@register');
 	
-	Route::group(['middleware' => ['auth:admin']], function () {
-
-        Route::get('/', function () {
-            return view('admin.dashboard.index');
-        })->name('admin.dashboard');
-    });
+	Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard');
 });

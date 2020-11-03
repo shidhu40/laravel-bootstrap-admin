@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	<!-- Bootstrap Core CSS -->
-	<link href="{!! asset('theme/backend/css/bootstrap.min.css') !!}" rel="stylesheet">
+	<link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
 	<!-- Animate CSS -->
 	<link href="{!! asset('theme/backend/css/animate.css') !!}" rel="stylesheet">
 	<!-- Custom Fonts -->
-	<link href="{!! asset('theme/backend/css/font-awesome.min.css') !!}" rel="stylesheet" type="text/css">
+	<link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet" type="text/css">
 	<!-- Admin CSS -->
 	<link href="{!! asset('theme/backend/css/admin.css') !!}" rel="stylesheet">
     @yield('styles')
@@ -31,9 +31,9 @@
 	
 	 <!-- /#wrapper -->
    <!-- jQuery -->
-   <script src="{!! asset('theme/backend/js/jquery.js') !!}"></script>
+   <script src="{!! asset('js/jquery.js') !!}"></script>
    <!-- Bootstrap Core JavaScript -->
-   <script src="{!! asset('theme/backend/js/bootstrap.js') !!}"></script>
+   <script src="{!! asset('js/bootstrap.js') !!}"></script>
    
     <!-- Proper Js -->
    <script src="{!! asset('theme/backend/js/popper.min.js') !!}"></script>

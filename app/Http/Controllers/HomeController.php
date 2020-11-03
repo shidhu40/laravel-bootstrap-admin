@@ -1,11 +1,10 @@
 <?php
-namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Item;
 
-class DashboardController extends Controller
+class HomeController extends Controller
 {
    /**
     * Create a new controller instance.
@@ -14,7 +13,7 @@ class DashboardController extends Controller
     */
 	public function __construct()
     {
-        $this->middleware('auth:admin');
+        
     }
    /**
     * Show the application dashboard.
@@ -23,6 +22,6 @@ class DashboardController extends Controller
     */
     public function index()
     {
-	   return view('admin.dashboard.index');
+	   return view('frontend.home.index');
     }
 }

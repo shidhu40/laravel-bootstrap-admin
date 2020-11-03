@@ -12,7 +12,7 @@
 						<li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
 						<li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
 						<li class="dropdown-divider"></li>
-						<li><a class="dropdown-item" href="login.html">Logout</a></li>
+						<li><a class="dropdown-item" href="{{ url('/logout') }}">Logout</a></li>
 					</ul>
 				</div>
 				<div class="logo-element">
@@ -30,22 +30,13 @@
 				</ul>
 			</li>
 			<li>
-				<a href=""><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning float-right">16/24</span></a>
+				<a href=""><i class="fa fa-envelope"></i> <span class="nav-label">Articles </span><span class="label label-warning float-right">16/24</span></a>
 				<ul class="nav nav-second-level collapse">
 					<li><a href="">Inbox</a></li>
 					<li><a href="">Email view</a></li>
 					<li><a href="">Compose email</a></li>
 					<li><a href="">Email templates</a></li>
 				</ul>
-			</li>
-			<li>
-				<a href=""><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
-			</li>
-			<li class="landing_link">
-				<a target="_blank" href=""><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning float-right">NEW</span></a>
-			</li>
-			<li class="special_link">
-				<a href=""><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
 			</li>
 		</ul>
 	</div>
